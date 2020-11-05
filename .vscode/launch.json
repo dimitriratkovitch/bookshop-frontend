@@ -1,0 +1,105 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run cap-bookshop-frontend-cap-bookshop-ui",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cap-bookshop-frontend-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nscap-bookshop-ui/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/cap-bookshop-ui",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cap-bookshop-frontend/cap-bookshop-ui\"}"
+      },
+      "envFile": "${workspaceFolder}/cap-bookshop-ui/.env1",
+      "preLaunchTask": "Build cap-bookshop-frontend"
+    },
+    {
+      "name": "Run cap-bookshop-frontend-cap-bookshop-ui",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cap-bookshop-frontend-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nscap-bookshop-ui/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/cap-bookshop-ui",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cap-bookshop-frontend/cap-bookshop-ui\"}"
+      },
+      "envFile": "${workspaceFolder}/cap-bookshop-ui/.env2",
+      "preLaunchTask": "Build cap-bookshop-frontend"
+    },
+    {
+      "name": "Run cap-bookshop-frontend-cap-bookshop-ui",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cap-bookshop-frontend-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nscap-bookshop-ui/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/cap-bookshop-ui",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cap-bookshop-frontend/cap-bookshop-ui\"}"
+      },
+      "envFile": "${workspaceFolder}/cap-bookshop-ui/.env3",
+      "preLaunchTask": "Build cap-bookshop-frontend"
+    },
+    {
+      "name": "Run cap-bookshop-frontend-cap-bookshop-ui",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cap-bookshop-frontend-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nscap-bookshop-ui/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/cap-bookshop-ui",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cap-bookshop-frontend/cap-bookshop-ui\"}"
+      },
+      "envFile": "${workspaceFolder}/cap-bookshop-ui/.env4",
+      "preLaunchTask": "Build cap-bookshop-frontend"
+    },
+    {
+      "name": "Run cap-bookshop-frontend-cap-bookshop-ui1",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cap-bookshop-frontend-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nscap-bookshop-ui/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/cap-bookshop-ui",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cap-bookshop-frontend/cap-bookshop-ui\"}"
+      },
+      "envFile": "${workspaceFolder}/cap-bookshop-ui/.env5",
+      "preLaunchTask": "Build cap-bookshop-frontend"
+    }
+  ]
+}

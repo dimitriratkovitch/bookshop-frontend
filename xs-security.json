@@ -1,0 +1,24 @@
+{
+  "xsappname": "cap-bookshop-frontend",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "authorities":["$XSAPPNAME(application,bookshop-backend).scopeforbackend"],
+  "foreign-scope-references": [
+    "$XSAPPNAME(application,bookshop-backend).scopeforbackend"
+  ],
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+_schema-version: "3.2"
+ID: cap-bookshop-frontend
+version: 0.0.1
+modules:
+- name: cap-bookshop-frontend-approuter
+  type: approuter.nodejs
+  path: cap-bookshop-frontend-approuter
+  requires:
+  - name: cap-bookshop-frontend_html_repo_runtime
+  - name: cap-config
+    group: destinations
+    properties:
+        name: serviceapi
+        url: '~{srv-url}'
+        forwardAuthToken: true
+  - name: uaa_cap-bookshop-frontend
+  - name: dest_cap-bookshop-frontend
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: cap-bookshop-frontend_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: cap-bookshop-frontend_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - cap-bookshop-ui-content.zip
+      name: cap-bookshop-ui
+      target-path: resources/
+- name: cap-bookshop-ui
+  type: html5
+  path: cap-bookshop-ui
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: cap-bookshop-frontend_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: cap-bookshop-frontend_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: uaa_cap-bookshop-frontend
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: cap-bookshop-frontend-xsuaa-service
+    service-plan: application
+- name: dest_cap-bookshop-frontend
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+- name: cap-config
+  type: configuration
+  parameters:
+    provider-nid: mta
+    provider-id: bookshop-backend:srv-api
+    version: ">=0.0.0" 
+    target: 
+      org: ${org}     # Specifies the org of the provider MTA
+      space: ${space} # Wildcard * searches in all spaces    
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install
